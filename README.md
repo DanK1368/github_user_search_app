@@ -21,8 +21,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/github-user-search-app-html5sass-with-partialsvanillajs-04Dwf8kF5)
+- Live Site URL: [Click Here](https://dank1368.github.io/github_user_search_app/)
 
 ## My process
 
