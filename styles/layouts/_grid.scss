@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+main {
+  display: grid;
+  padding: 1.5rem;
+  gap: 1.5rem;
+
+  @include md {
+    place-content: center;
+    height: 100vh;
+  }
+}

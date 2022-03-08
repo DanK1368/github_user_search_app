@@ -1,0 +1,128 @@
+@use "../abstracts" as *;
+
+.profile {
+  background: $card-bg-color-dm;
+  width: clamp(315px, 100%, 800px);
+  min-height: 517px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 2rem;
+  @include flex(column, space-around, start);
+  row-gap: 1rem;
+
+  @include md {
+    @include flex(column, space-evenly, start);
+    padding: 4rem;
+    min-width: 600px;
+  }
+
+  @include lg {
+    min-width: 730px;
+  }
+
+  @include darkTheme {
+    background: $primary-color-dm;
+    box-shadow: 0 1px 5px rgba(70, 96, 187, 0.3);
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    @include md {
+      width: 117px;
+      height: 117px;
+    }
+  }
+
+  &__header {
+    @include flex(row, start, center);
+    column-gap: 2rem;
+
+    @include lg {
+      width: 92%;
+      @include flex(row, start, center);
+      column-gap: 7.5rem;
+    }
+  }
+
+  &__heading {
+    font-size: $header2--sml;
+    line-height: 33px;
+    font-weight: 700;
+
+    @include md {
+      font-size: $header2--bg;
+    }
+
+    @include darkTheme {
+      color: $main-bg-color-dm;
+    }
+  }
+
+  &__username {
+    font-size: $text--sml;
+    color: $primary-color-dm;
+
+    @include md {
+      font-size: $text--bg;
+    }
+  }
+
+  &__date {
+    @include darkTheme {
+      color: $main-bg-color-dm;
+    }
+  }
+
+  &__text {
+    width: 100%;
+
+    @include lg {
+      width: 70%;
+      margin-left: auto;
+    }
+  }
+
+  &__stats {
+    @include flex(row, space-around, center);
+    background: $main-bg-color-dm;
+    border-radius: 10px;
+    padding-block: 2rem;
+    text-align: center;
+    margin-block: 2rem;
+
+    @include darkTheme {
+      background: $main-bg-color-lm;
+    }
+  }
+}
+
+.links {
+  @include md {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @include lg {
+    width: 70%;
+    margin-left: auto;
+  }
+
+  &__text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__container {
+    @include flex(row, start, center);
+    gap: 2rem;
+
+    @include md {
+      @include flex(row, start, center);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.header {
+  width: clamp(315px, 100%, 730px);
+  margin: 0 auto;
+  @include flex(row, space-between, center);
+  padding: 3rem 1rem;
+
+  @include md {
+    padding: 1.5rem 0;
+  }
+
+  &__container {
+    @include flex(row, center, center);
+    column-gap: 2rem;
+  }
+}

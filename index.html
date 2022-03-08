@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Frontend Mentor | GitHub user search app</title>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <h1 class="header__logo">devfinder</h1>
+        <div class="header__container">
+          <p class="header__theme-text">LIGHT</p>
+          <img
+            class="light header__theme-icon"
+            src="assets/icon-sun.svg"
+            alt="icon of the sun"
+          />
+        </div>
+      </header>
+
+      <section class="search" role="search">
+        <form class="search__form">
+          <label for="search"></label>
+          <input
+            class="search__input"
+            type="text"
+            name="search"
+            placeholder="Search Github username..."
+          />
+          <button class="search__btn">Search</button>
+          <img
+            class="search__icon"
+            src="assets/icon-search.svg"
+            alt="search icon"
+          />
+        </form>
+      </section>
+
+      <article class="profile">
+        <header class="profile__header">
+          <img
+            class="profile__img"
+            src="https://avatars.githubusercontent.com/u/583231?v=4"
+            alt="github user profile image"
+          />
+          <div class="profile__info">
+            <h2 class="profile__heading">The Octocat</h2>
+            <span class="profile__username">@octocat</span>
+            <p class="profile__date">Joined 25 Jan 2011</p>
+          </div>
+        </header>
+        <section class="profile__text">
+          <p class="bio text-light">This profile has no bio</p>
+          <div class="profile__stats">
+            <div>
+              <h3>Repos</h3>
+              <span class="profile__stats--style repos">8</span>
+            </div>
+            <div>
+              <h3>Followers</h3>
+              <span class="profile__stats--style followers">3938</span>
+            </div>
+            <div>
+              <h3>Following</h3>
+              <span class="profile__stats--style following">9</span>
+            </div>
+          </div>
+        </section>
+        <footer class="links">
+          <div class="links__container">
+            <img src="assets/icon-location.svg" alt="location icon" />
+            <p class="links__text text-light location">San Francisco</p>
+          </div>
+          <div class="links__container">
+            <img src="assets/icon-website.svg" alt="website icon" />
+            <a href="" target="_blank" class="links__text text-light website"
+              >https://github.blog</a
+            >
+          </div>
+          <div class="links__container">
+            <img src="assets/icon-twitter.svg" alt="twitter icon" />
+            <a target="_blank" class="links__text text-light twitter"
+              >Not Available</a
+            >
+          </div>
+          <div class="links__container">
+            <img src="assets/icon-company.svg" alt="company icon" />
+            <a target="_blank" class="links__text text-light company"
+              >Not Available</a
+            >
+          </div>
+        </footer>
+      </article>
+    </main>
+  </body>
+  <!-- <script src="experiment.js"></script> -->
+  <script src="app.js"></script>
+</html>

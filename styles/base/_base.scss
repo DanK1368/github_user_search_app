@@ -1,0 +1,92 @@
+@use "../abstracts" as *;
+@use "./reset";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $main-font;
+  line-height: 25px;
+  color: $primary-color-dm;
+  background: $main-bg-color-dm;
+
+  @include darkTheme {
+    background: $main-bg-color-lm;
+  }
+}
+
+input {
+  font-family: $main-font;
+  font-size: 1rem;
+
+  @include md {
+    font-size: 1.5rem;
+  }
+}
+
+h1 {
+  font-size: 2.6rem;
+  line-height: 32px;
+  font-weight: 700;
+
+  @include darkTheme {
+    color: $main-bg-color-dm;
+  }
+}
+
+h3 {
+  font-size: $header3;
+  font-weight: lighter;
+  line-height: 24px;
+
+  @include darkTheme {
+    color: $main-bg-color-dm;
+  }
+}
+
+.header__theme-text {
+  font-size: 1.3rem;
+
+  @include darkTheme {
+    color: $main-bg-color-dm;
+  }
+}
+
+.profile__stats--style {
+  font-size: 1.6rem;
+  font-weight: bold;
+
+  @include md {
+    font-size: 2.2rem;
+  }
+
+  @include darkTheme {
+    color: $main-bg-color-dm;
+  }
+}
+
+.text-light {
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+
+  @include md {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+
+  @include darkTheme {
+    color: $stats-color-lm;
+  }
+}
+
+.not-available-text-style {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none !important;
+  cursor: default !important;
+
+  @include darkTheme {
+    color: $main-bg-color-dm;
+  }
+}

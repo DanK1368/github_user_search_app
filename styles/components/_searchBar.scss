@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.search__form {
+  width: clamp(315px, 100%, 800px);
+  margin: 0 auto;
+  position: relative;
+
+  &::after {
+    content: attr(error);
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    top: -50%;
+    right: 100px;
+
+    @media (min-width: 420px) {
+      top: 0;
+      transform: translateY(50%);
+    }
+  }
+}
+
+.search__input {
+  color: $primary-color-dm;
+  background: $card-bg-color-dm;
+  border-radius: 15px;
+  position: relative;
+  padding: 1.5rem 12rem 1.5rem 6rem;
+  width: 100%;
+  border: none;
+
+  &:focus {
+    outline: 1px solid $special-color;
+  }
+
+  @include darkTheme {
+    background: $primary-color-dm;
+    color: $main-bg-color-dm;
+    box-shadow: 0 1px 5px rgba(70, 96, 187, 0.3);
+  }
+}
+
+.search__icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.search__btn {
+  background: $special-color;
+  color: $primary-color-dm;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(96, 171, 255);
+  }
+}
