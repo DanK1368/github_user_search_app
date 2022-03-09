@@ -43,16 +43,11 @@ const updateUI = (username) => {
 
   //update prosonal info
 
-  if (username.name === null) {
-    profileInfo.innerHTML = `
-    <h2 class="profile__heading">${username.login}</h2>
-    <span class="profile__username">@${username.login}</span>`;
-  } else {
-    profileInfo.innerHTML = `
-    <h2 class="profile__heading">${username.name}</h2>
+  profileInfo.innerHTML = `
+    <h2 class="profile__heading">${username.name || username.login}</h2>
     <span class="profile__username">@${username.login}</span>
-    <p class="profile__date">Joined ${formattedDate}</p>`;
-  }
+    <p class="profile__date">Joined ${formattedDate}</p>
+  `;
 
   // update profile bio
 
