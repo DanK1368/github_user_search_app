@@ -6,10 +6,10 @@ const profileRepos = document.querySelector(".repos");
 const profileFollowers = document.querySelector(".followers");
 const profileFollowing = document.querySelector(".following");
 const profileLocation = document.querySelector(".location");
-const profileWebsite = document.querySelector(".website");
 const profileTwitter = document.querySelector(".twitter");
 const profileCompany = document.querySelector(".company");
 const profileBio = document.querySelector(".bio");
+const profileWebsite = document.querySelector(".website");
 
 // fetch github api
 
@@ -75,43 +75,49 @@ const updateUI = (username) => {
     profileLocation.classList.remove("not-available-text-style");
   }
 
-  if (username.blog === null) {
-    profileWebsite.textContent = "Not Available";
-    profileWebsite.classList.add("not-available-text-style");
+  if (username.blog === null || username.blog === "") {
+    profileWebsite.innerHTML = `
+    <img src="assets/icon-website.svg" alt="" />
+    <p class="links__text text-light not-available-text-style">Not Available</p>
+    `;
   } else {
-    profileWebsite.textContent = `${username.blog}`;
-    profileWebsite.setAttribute("href", username.blog);
-    profileWebsite.classList.remove("not-available-text-style");
+    profileWebsite.innerHTML = `
+    <img src="assets/icon-website.svg" alt="" />
+    <a href="${username.blog}" target="_blank" class="links__text text-light">${username.blog}</a>
+    `;
   }
 
   if (username.twitter_username === null) {
-    profileTwitter.textContent = "Not Available";
-    profileTwitter.classList.add("not-available-text-style");
-    profileTwitter.removeAttribute("href");
+    profileTwitter.innerHTML = `
+    <img src="assets/icon-twitter.svg" alt="" />
+    <p class="links__text text-light not-available-text-style">Not Available</p>
+    `;
   } else {
-    profileTwitter.textContent = `${username.twitter_username}`;
-    profileTwitter.setAttribute(
-      "href",
-      `https://twitter.com/${username.twitter_username}`
-    );
-    profileTwitter.classList.remove("not-available-text-style");
+    profileTwitter.innerHTML = `
+    <img src="assets/icon-twitter.svg" alt="" />
+    <a href="https://twitter.com/${username.twitter_username}" target="_blank" class="links__text text-light">${username.twitter_username}</a>
+    `;
   }
 
   if (username.company === null) {
-    profileCompany.textContent = "Not Available";
-    profileCompany.classList.add("not-available-text-style");
-    profileCompany.removeAttribute("href");
+    profileCompany.innerHTML = `
+    <img src="assets/icon-company.svg" alt="" />
+    <p class="links__text text-light not-available-text-style">Not Available</p>
+    `;
   } else if (username.company !== null && username.company.charAt(0) === "@") {
-    profileCompany.textContent = `${username.company.substring(1)}`;
-    profileCompany.setAttribute(
-      "href",
-      `https://github.com/${username.company.substring(1)}`
-    );
-    profileCompany.classList.remove("not-available-text-style");
+    profileCompany.innerHTML = `
+    <img src="assets/icon-twitter.svg" alt="" />
+    <a href="https://github.com/${username.company.substring(
+      1
+    )}" target="_blank" class="links__text text-light">${username.company.substring(
+      1
+    )}</a>
+    `;
   } else {
-    profileCompany.textContent = `${username.company}`;
-    profileCompany.setAttribute("href", username.blog);
-    profileCompany.classList.remove("not-available-text-style");
+    profileCompany.innerHTML = `
+    <img src="assets/icon-twitter.svg" alt="" />
+    <a href="${username.blog}" target="_blank" class="links__text text-light">${username.company}</a>
+    `;
   }
 };
 
