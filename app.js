@@ -11,6 +11,10 @@ const profileCompany = document.querySelector(".company");
 const profileBio = document.querySelector(".bio");
 const profileWebsite = document.querySelector(".website");
 
+const themeText = document.querySelector(".header__theme-text");
+const themeIcon = document.querySelector(".header__theme-icon");
+const themeMode = window.matchMedia("(prefers-color-scheme: dark)");
+
 // fetch github api
 
 const getProfile = async (username) => {
@@ -45,7 +49,7 @@ const updateUI = (username) => {
 
   profileInfo.innerHTML = `
     <h2 class="profile__heading">${username.name || username.login}</h2>
-    <span class="profile__username">@${username.login}</span>
+    <p class="profile__username">@${username.login}</p>
     <p class="profile__date">Joined ${formattedDate}</p>
   `;
 
@@ -106,7 +110,7 @@ const updateUI = (username) => {
     `;
   } else if (username.company !== null && username.company.charAt(0) === "@") {
     profileCompany.innerHTML = `
-    <img src="assets/icon-twitter.svg" alt="" />
+    <img src="assets/icon-company.svg" alt="" />
     <a href="https://github.com/${username.company.substring(
       1
     )}" target="_blank" class="links__text text-light">${username.company.substring(
@@ -115,7 +119,7 @@ const updateUI = (username) => {
     `;
   } else {
     profileCompany.innerHTML = `
-    <img src="assets/icon-twitter.svg" alt="" />
+    <img src="assets/icon-company.svg" alt="" />
     <a href="${username.blog}" target="_blank" class="links__text text-light">${username.company}</a>
     `;
   }
@@ -138,22 +142,22 @@ searchForm.addEventListener("submit", (e) => {
 
 // light or dark mode
 
-const themeText = document.querySelector(".header__theme-text");
-const themeIcon = document.querySelector(".header__theme-icon");
-const themeMode = window.matchMedia("(prefers-color-scheme: dark)");
-
-themeMode.addEventListener("change", (event) => {
-  if (event.matches) {
+window.onload = () => {
+  //uopdate theme based on preferred browser theme of user
+  if (themeMode.matches) {
     themeText.textContent = "DARK";
     themeIcon.setAttribute("src", "assets/icon-moon.svg");
   } else {
     themeText.textContent = "LIGHT";
     themeIcon.setAttribute("src", "assets/icon-sun.svg");
   }
-});
 
-window.onload(() => {
-  if (themeMode.matches) {
+  // load octocat github profile on window load
+  getProfile("octocat").then((data) => updateUI(data));
+};
+
+themeMode.addEventListener("change", (event) => {
+  if (event.matches) {
     themeText.textContent = "DARK";
     themeIcon.setAttribute("src", "assets/icon-moon.svg");
   } else {
