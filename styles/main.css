@@ -173,6 +173,7 @@ h3 {
 @media (prefers-color-scheme: dark) {
   .not-available-text-style {
     color: #141d2f;
+    opacity: 0.5;
   }
 }
 
@@ -330,6 +331,11 @@ h3 {
 .profile__username {
   font-size: 1.3rem;
   color: white;
+}
+@media (prefers-color-scheme: dark) {
+  .profile__username {
+    color: #0079ff;
+  }
 }
 @media only screen and (min-width: 600px) {
   .profile__username {

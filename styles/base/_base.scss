@@ -88,5 +88,6 @@ h3 {
 
   @include darkTheme {
     color: $main-bg-color-dm;
+    opacity: 0.5;
   }
 }

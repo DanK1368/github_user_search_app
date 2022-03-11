@@ -65,6 +65,10 @@
     font-size: $text--sml;
     color: $primary-color-dm;
 
+    @include darkTheme {
+      color: $special-color;
+    }
+
     @include md {
       font-size: $text--bg;
     }
